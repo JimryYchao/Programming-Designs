@@ -1,7 +1,7 @@
 #### 坏味道与重构手法速查表
 
 |坏味道|常用重构|
-|:--:|:---|
+|:--|:---|
 |[神秘命名](/Contents/代码的坏味道md#神秘命名mysterious-name)| [改变函数声明](/Contents/重构名录.md#改变函数声明change-function-declaration), [变量改名](/Contents/重构名录.md#变量改名rename-variable), [字段改名](/Contents/重构名录.md#字段改名rename-field)|
 |[重复代码](/Contents/代码的坏味道md#重复代码duplicated-code)| [提炼函数](/Contents/重构名录.md#提炼函数extract-function), [移动语句](/Contents/重构名录.md#移动语句slide-statements), [函数上移](/Contents/重构名录.md#函数上移pull-up-method)|
 |[过长函数](/Contents/代码的坏味道md#过长函数long-function)| [提炼函数](/Contents/重构名录.md#提炼函数extract-function), [以查询取代临时变量](/Contents/重构名录.md#以查询取代临时变量replace-temp-with-query), [引入参数对象](/Contents/重构名录.md#引入参数对象introduce-parameter-object), [保持对象完整](/Contents/重构名录.md#保持对象完整preserve-whole-object), [以命令取代函数](/Contents/重构名录.md#以命令取代函数replace-function-with-command), [分解条件表达式](/Contents/重构名录.md#分解条件表达式decompose-conditional), [以多态取代条件表达式](/Contents/重构名录.md#以多态取代条件表达式replace-conditional-with-polymorphism), [拆分循环](/Contents/重构名录.md#拆分循环split-loop)|

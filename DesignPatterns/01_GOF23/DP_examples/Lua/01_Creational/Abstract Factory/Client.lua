@@ -13,7 +13,7 @@ local function drawShape(ab)
 end
 
 -- 示例
-local function example()
+local function AbstractFactoryDemo()
     local factoryProducer = factories.FactoryProducer
     local ProductKind = factories.ProductKind
     
@@ -23,4 +23,4 @@ local function example()
     drawShape(blueRectangleF)
 end
 
-example()
+AbstractFactoryDemo()

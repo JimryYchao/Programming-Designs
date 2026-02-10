@@ -1,170 +1,142 @@
-// product.rs
-// 产品和包装实现
-
 use super::builder::{IPacker, Item};
 
 // 包装器
-pub struct Wrapper {
-    item_name: String,
-}
+pub struct Wrapper;
 
 impl Wrapper {
-    pub fn new(item_name: &str) -> Self {
-        Self {
-            item_name: item_name.to_string(),
-        }
-    }
+    pub const INSTANCE: Wrapper = Wrapper;
 }
 
 impl IPacker for Wrapper {
     fn pack(&self, item: &dyn Item) {
-        println!("Wrapper a {}", item.get_name());
+        println!("Wrapper a {}", item.name());
     }
 }
 
-pub struct Bottle {
-    item_name: String,
-}
+pub struct Bottle;
 
 impl Bottle {
-    pub fn new(item_name: &str) -> Self {
-        Self {
-            item_name: item_name.to_string(),
-        }
-    }
+    pub const INSTANCE: Bottle = Bottle;
 }
 
 impl IPacker for Bottle {
     fn pack(&self, item: &dyn Item) {
-        println!("Bottle a {}", item.get_name());
+        println!("Bottle a {}", item.name());
     }
 }
 
 // Item 实现
-pub struct VegetableBurger {
-    wrapper: Wrapper,
-}
+pub trait Burger: Item {}
+pub trait ColdDrink: Item {}
+
+pub struct VegetableBurger;
 
 impl VegetableBurger {
-    pub fn new() -> Self {
-        Self {
-            wrapper: Wrapper::new("VegetableBurger"),
-        }
-    }
+    pub const INSTANCE: VegetableBurger = VegetableBurger;
 }
 
 impl Default for VegetableBurger {
     fn default() -> Self {
-        Self::new()
+        Self::INSTANCE
     }
 }
 
 impl Item for VegetableBurger {
-    fn get_name(&self) -> &str {
+    fn name(&self) -> &str {
         "VegetableBurger"
     }
     
-    fn get_price(&self) -> f32 {
+    fn price(&self) -> f32 {
         8.5
     }
     
-    fn get_packer(&self) -> &dyn IPacker {
-        &self.wrapper
+    fn packer(&self) -> &dyn IPacker {
+        &Wrapper::INSTANCE
     }
 }
 
-pub struct ChickenBurger {
-    wrapper: Wrapper,
-}
+impl Burger for VegetableBurger {}
+
+pub struct ChickenBurger;
 
 impl ChickenBurger {
-    pub fn new() -> Self {
-        Self {
-            wrapper: Wrapper::new("ChickenBurger"),
-        }
-    }
+    pub const INSTANCE: ChickenBurger = ChickenBurger;
 }
 
 impl Default for ChickenBurger {
     fn default() -> Self {
-        Self::new()
+        Self::INSTANCE
     }
 }
 
 impl Item for ChickenBurger {
-    fn get_name(&self) -> &str {
+    fn name(&self) -> &str {
         "ChickenBurger"
     }
     
-    fn get_price(&self) -> f32 {
+    fn price(&self) -> f32 {
         15.0
     }
     
-    fn get_packer(&self) -> &dyn IPacker {
-        &self.wrapper
+    fn packer(&self) -> &dyn IPacker {
+        &Wrapper::INSTANCE
     }
 }
 
-pub struct CokeCola {
-    bottle: Bottle,
-}
+impl Burger for ChickenBurger {}
+
+pub struct CokeCola;
 
 impl CokeCola {
-    pub fn new() -> Self {
-        Self {
-            bottle: Bottle::new("CokeCola"),
-        }
-    }
+    pub const INSTANCE: CokeCola = CokeCola;
 }
 
 impl Default for CokeCola {
     fn default() -> Self {
-        Self::new()
+        Self::INSTANCE
     }
 }
 
 impl Item for CokeCola {
-    fn get_name(&self) -> &str {
+    fn name(&self) -> &str {
         "CokeCola"
     }
     
-    fn get_price(&self) -> f32 {
+    fn price(&self) -> f32 {
         3.5
     }
     
-    fn get_packer(&self) -> &dyn IPacker {
-        &self.bottle
+    fn packer(&self) -> &dyn IPacker {
+        &Bottle::INSTANCE
     }
 }
 
-pub struct PepsiCola {
-    bottle: Bottle,
-}
+impl ColdDrink for CokeCola {}
+
+pub struct PepsiCola;
 
 impl PepsiCola {
-    pub fn new() -> Self {
-        Self {
-            bottle: Bottle::new("PepsiCola"),
-        }
-    }
+    pub const INSTANCE: PepsiCola = PepsiCola;
 }
 
 impl Default for PepsiCola {
     fn default() -> Self {
-        Self::new()
+        Self::INSTANCE
     }
 }
 
 impl Item for PepsiCola {
-    fn get_name(&self) -> &str {
+    fn name(&self) -> &str {
         "PepsiCola"
     }
     
-    fn get_price(&self) -> f32 {
+    fn price(&self) -> f32 {
         3.0
     }
     
-    fn get_packer(&self) -> &dyn IPacker {
-        &self.bottle
+    fn packer(&self) -> &dyn IPacker {
+        &Bottle::INSTANCE
     }
 }
+
+impl ColdDrink for PepsiCola {}

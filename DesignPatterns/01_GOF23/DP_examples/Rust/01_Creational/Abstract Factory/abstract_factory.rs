@@ -1,15 +1,11 @@
-// abstract_factory.rs
-// 抽象工厂
-
 pub trait AbstractFactory {
-    fn get_color(&self) -> Box<dyn Color>;
-    fn get_shape(&self) -> Box<dyn Shape>;
+    fn get_color(&self) -> Box<dyn IColor>;
+    fn get_shape(&self) -> Box<dyn IShape>;
 }
-
-pub trait Color {
+pub trait IColor {
     fn fill(&self);
 }
 
-pub trait Shape {
+pub trait IShape {
     fn draw(&self);
 }

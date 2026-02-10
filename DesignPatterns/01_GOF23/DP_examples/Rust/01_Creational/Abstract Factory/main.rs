@@ -1,11 +1,8 @@
-// client.rs
-// 客户端代码
-
 mod abstract_factory;
 mod abstract_product;
 mod concrete_factory;
 
-use abstract_factory::{AbstractFactory, Color, Shape};
+use abstract_factory::{AbstractFactory, IColor, IShape};
 use concrete_factory::{FactoryProducer, ProductKind};
 
 // 客户端代码
@@ -21,11 +18,15 @@ fn example() {
     let mut factory_producer = FactoryProducer::default();
     
     // 红色圆形
-    let red_circle_f = factory_producer.get_factory(ProductKind::RedCircle);
+    let red_circle_f = factory_producer.GetFactory(ProductKind::RedCircle);
     draw_shape(red_circle_f);
     
+    // 绿色方形
+    let green_square_f = factory_producer.GetFactory(ProductKind::GreenSquare);
+    draw_shape(green_square_f);
+    
     // 蓝色矩形
-    let blue_rectangle_f = factory_producer.get_factory(ProductKind::BlueRectangle);
+    let blue_rectangle_f = factory_producer.GetFactory(ProductKind::BlueRectangle);
     draw_shape(blue_rectangle_f);
 }
 

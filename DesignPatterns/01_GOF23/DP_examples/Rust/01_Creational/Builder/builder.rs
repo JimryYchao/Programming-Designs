@@ -1,6 +1,3 @@
-// builder.rs
-// 建造者接口
-
 pub trait IBuilder {
     fn build(&self) -> Box<dyn Item>;
 }
@@ -10,7 +7,14 @@ pub trait IPacker {
 }
 
 pub trait Item {
-    fn get_name(&self) -> &str;
-    fn get_price(&self) -> f32;
-    fn get_packer(&self) -> &dyn IPacker;
+    fn name(&self) -> &str;
+    fn price(&self) -> f32;
+    fn packer(&self) -> &dyn IPacker;
+}
+
+pub enum ItemKind {
+    VegetableBurger,
+    ChickenBurger,
+    CokeCola,
+    PepsiCola,
 }

@@ -10,6 +10,7 @@ _TMP_
 # User-specific files
 *.rsuser
 *.suo
+*.exe
 *.user
 *.userosscache
 *.sln.docstates

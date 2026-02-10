@@ -29,9 +29,9 @@
   <a href="../DP_examples/C/01_Creational/Abstract%20Factory/client.c"><img src="https://img.shields.io/badge/C-00599C?for-the-badge&logoColor=white"></a>
   <a href="../DP_examples/C++/01_Creational/Abstract%20Factory/Client.cpp"><img src="https://img.shields.io/badge/C++-00599C?for-the-badge&logoColor=white"></a>
   <a href="../DP_examples/Lua/01_Creational/Abstract%20Factory/Client.lua"><img src="https://img.shields.io/badge/Lua-00599C?for-the-badge&logoColor=white"></a>
-  <a href="../DP_examples/Go/01_Creational/Abstract%20Factory/Client.go"><img src="https://img.shields.io/badge/Go-00599C?for-the-badge&logoColor=white"></a>
+  <a href="../DP_examples/Go/01_Creational/Abstract%20Factory/Client_test.go"><img src="https://img.shields.io/badge/Go-00599C?for-the-badge&logoColor=white"></a>
   <a href="../DP_examples/Python/01_Creational/Abstract%20Factory/Client.py"><img src="https://img.shields.io/badge/Python-00599C?for-the-badge&logoColor=white"></a>
-  <a href="../DP_examples/Rust/01_Creational/Abstract%20Factory/client.rs"><img src="https://img.shields.io/badge/Rust-00599C?for-the-badge&logoColor=white"></a>
+  <a href="../DP_examples/Rust/01_Creational/Abstract%20Factory/main.rs"><img src="https://img.shields.io/badge/Rust-00599C?for-the-badge&logoColor=white"></a>
 </p>
 
 ---

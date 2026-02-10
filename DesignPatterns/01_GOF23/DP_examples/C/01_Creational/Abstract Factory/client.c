@@ -32,5 +32,4 @@ void example()
 int main() {
     example();
 }
-// cd 'this directory'
 // gcc 'client.c' 'concrete_factory.c' 'concrete_product.c' -o a.exe

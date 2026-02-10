@@ -1,7 +1,3 @@
-"""
-Client.py
-"""
-
 from ConcreteFactory import FactoryProducer, ProductKind
 
 # 客户端代码

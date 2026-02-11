@@ -1,7 +1,8 @@
-﻿namespace Creational;
+﻿using Creational.AbstractFactory;
+namespace Creational;
 
 internal class AbstractFactoryDemo {
-    static void DrawShape(AbstractFactory ab) {
+    static void DrawShape(AbstractFactory.AbstractFactory ab) {
         var shape = ab.GetShape();
         var color = ab.GetColor();
         shape?.Draw();

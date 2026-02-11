@@ -1,4 +1,4 @@
-﻿namespace Creational;
+﻿namespace Creational.Builder;
 public interface IMealBuilder {
     List<IBuilder> GetBuilders();
 }

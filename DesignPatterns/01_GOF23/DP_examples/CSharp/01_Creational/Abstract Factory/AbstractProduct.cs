@@ -1,4 +1,4 @@
-﻿namespace Creational;
+﻿namespace Creational.AbstractFactory;
 
 public interface IColor { void Fill(); }
 public class Red : IColor {

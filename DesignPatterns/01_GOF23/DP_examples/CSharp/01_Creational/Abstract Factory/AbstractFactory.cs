@@ -1,4 +1,4 @@
-﻿namespace Creational;
+﻿namespace Creational.AbstractFactory;
 
 public abstract class AbstractFactory {
     public abstract IColor GetColor();

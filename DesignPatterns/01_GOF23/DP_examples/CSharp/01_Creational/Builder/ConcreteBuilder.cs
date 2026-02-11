@@ -1,4 +1,4 @@
-﻿namespace Creational;
+﻿namespace Creational.Builder;
 
 public class BugerBuilder<T> : IBuilder where T : Burger, new() {
     public static readonly BugerBuilder<T> Instance = new BugerBuilder<T>();

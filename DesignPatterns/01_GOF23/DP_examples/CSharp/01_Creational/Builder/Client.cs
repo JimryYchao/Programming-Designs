@@ -1,4 +1,5 @@
-﻿namespace Creational;
+﻿using Creational.Builder;
+namespace Creational;
 
 internal class BuilderDemo {
     public static void Example() {

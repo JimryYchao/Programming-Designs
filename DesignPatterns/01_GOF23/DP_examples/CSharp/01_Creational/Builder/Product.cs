@@ -1,4 +1,4 @@
-﻿namespace Creational;
+﻿namespace Creational.Builder;
 // 模拟复杂的内部
 // IPacker
 internal class Wrapper : IPacker {

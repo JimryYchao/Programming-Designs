@@ -1,4 +1,4 @@
-﻿namespace Creational;
+﻿namespace Creational.Builder;
 
 public class Director<Builder> where Builder : IMealBuilder, new() {
     static Builder builder = new Builder();

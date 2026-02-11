@@ -1,5 +1,5 @@
 ﻿
-namespace Creational;
+namespace Creational.AbstractFactory;
 internal class ProductFactory<Color, Shape> : AbstractFactory
     where Color : IColor, new()
     where Shape : IShape, new() {

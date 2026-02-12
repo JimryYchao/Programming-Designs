@@ -38,13 +38,13 @@ type bigCircleCreator struct {
 	circleCreator
 }
 
-func (c bigCircleCreator) setRadius() {
+func (c bigCircleCreator) setRadius(circle IShape) IShape {
 	println("Set Radius to 10")
+	return circle
 }
 
 func (c bigCircleCreator) GetShape() IShape {
-	c.setRadius()
-	return c.circleCreator.GetShape()
+	return c.setRadius(c.circleCreator.GetShape())
 }
 
 func newCreator(kind ShapeKind) ICreator {

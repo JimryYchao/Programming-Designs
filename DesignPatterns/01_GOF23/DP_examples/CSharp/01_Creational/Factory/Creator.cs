@@ -36,11 +36,12 @@ public sealed partial class ShapeFactory {
     // 扩展 Circle
     internal class BigCircleCreator : CircleCreator, ICreator {
         public static new ICreator Instance => new BigCircleCreator();
-        private void SetRadius() => Console.WriteLine("Set Radius to 10");
-        public override IShape getShape() {
-            SetRadius();
-            return base.getShape();
+        private IShape SetRadius(IShape circle) {
+            // use circle
+            Console.WriteLine("Set Radius to 10");
+            return circle;
         }
+        public override IShape getShape() => SetRadius(base.getShape());
     }
 
    

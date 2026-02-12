@@ -70,16 +70,16 @@ std::shared_ptr<RectangleCreator> ICreator::Instance<RectangleCreator> = std::ma
 class BigCircleCreator : public CircleCreator
 {
 private:
-    void setRadius()
+    std::unique_ptr<IShape> setRadius(std::unique_ptr<IShape> circle)
     {
         std::cout << "Set Radius to 10" << std::endl;
+        return circle;
     }
 
 public:
     std::unique_ptr<IShape> getShape() override
     {
-        setRadius();
-        return CircleCreator::getShape();
+        return setRadius( CircleCreator::getShape());
     }
 };
 

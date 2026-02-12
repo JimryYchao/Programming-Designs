@@ -3,66 +3,84 @@
 #include "product.h"
 
 // 圆形产品方法
-static void circleDraw(IShape* self) {
+static void circleDraw(IShape *self)
+{
     printf("Draw a Circle\n");
 }
 
-static void circleFill(IShape* self) {
+static void circleFill(IShape *self)
+{
     printf("Fill red\n");
 }
 
 // 正方形产品方法
-static void squareDraw(IShape* self) {
+static void squareDraw(IShape *self)
+{
+    // use self->data
     printf("Draw a Square\n");
 }
 
-static void squareFill(IShape* self) {
+static void squareFill(IShape *self)
+{
     printf("Fill Green\n");
 }
 
 // 矩形产品方法
-static void rectangleDraw(IShape* self) {
+static void rectangleDraw(IShape *self)
+{
     printf("Draw a Rectangle\n");
 }
 
-static void rectangleFill(IShape* self) {
+static void rectangleFill(IShape *self)
+{
     printf("Fill Blue\n");
 }
 
 // 未知形状产品方法
-static void unknownShapeDraw(IShape* self) {
-    // 空实现
-}
+static void unknownShapeDraw(IShape *self) {}
 
-static void unknownShapeFill(IShape* self) {
-    // 空实现
-}
+static void unknownShapeFill(IShape *self) {}
 
-// 构造函数
-Circle* createCircle() {
-    Circle* circle = (Circle*)malloc(sizeof(Circle));
-    circle->base.draw = circleDraw;
-    circle->base.fill = circleFill;
-    return circle;
+// shape create
+void shape_destroy(IShape *self)
+{
+    if (self == NULL)
+        return;
+    if (self->data != NULL)
+    {
+        free(self->data);
+        self->data = NULL;
+        self->draw = NULL;
+        self->fill = NULL;
+    }
+    free(self);
 }
-
-Square* createSquare() {
-    Square* square = (Square*)malloc(sizeof(Square));
-    square->base.draw = squareDraw;
-    square->base.fill = squareFill;
-    return square;
-}
-
-Rectangle* createRectangle() {
-    Rectangle* rectangle = (Rectangle*)malloc(sizeof(Rectangle));
-    rectangle->base.draw = rectangleDraw;
-    rectangle->base.fill = rectangleFill;
-    return rectangle;
-}
-
-UnknownShape* createUnknownShape() {
-    UnknownShape* unknownShape = (UnknownShape*)malloc(sizeof(UnknownShape));
-    unknownShape->base.draw = unknownShapeDraw;
-    unknownShape->base.fill = unknownShapeFill;
-    return unknownShape;
+IShape *createShape(ShapeKind kind)
+{
+    IShape *shape = (IShape *)malloc(sizeof(IShape));
+    switch (kind)
+    {
+    case CIRCLE:
+        shape->data = malloc(sizeof(CircleData));
+        shape->draw = circleDraw;
+        shape->fill = circleFill;
+        break;
+    case SQUARE:
+        shape->data = malloc(sizeof(SquareData));
+        shape->draw = squareDraw;
+        shape->fill = squareFill;
+        break;
+    case RECTANGLE:
+        shape->data = malloc(sizeof(RectangleData));                
+        shape->draw = rectangleDraw;
+        shape->fill = rectangleFill;
+        break;
+    default:
+        shape->data = malloc(sizeof(UnknownShapeData));
+        shape->draw = unknownShapeDraw;
+        shape->fill = unknownShapeFill;
+        break;
+    }
+    shape->destroy = shape_destroy;
+    return shape;
 }

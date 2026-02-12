@@ -54,18 +54,3 @@ impl IShape for UnknownShape {
     fn draw(&self) {}
     fn fill(&self) {}
 }
-
-// pub struct BigCircle;
-
-// impl IShape for BigCircle {
-//     fn draw(&self) {
-//         println!("Draw a Big Circle");
-//     }
-    
-//     fn fill(&self) {
-//         println!("Fill red");
-//     }
-// }
-
-
-

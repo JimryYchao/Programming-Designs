@@ -54,10 +54,12 @@ end
 -- 大圆形创建者
 ---@class BigCircleCreator : CircleCreator
 BigCircleCreator = CircleCreator:new()
-function BigCircleCreator:setRadius()
+---@param circle IShape
+---@return IShape 
+function BigCircleCreator:setRadius(circle) 
     print("Set Radius to 10")
+    return circle
 end
 function BigCircleCreator:getShape()
-    self:setRadius()
-    return CircleCreator.getShape(self)
+    return self:setRadius(CircleCreator:getShape())
 end

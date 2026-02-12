@@ -28,11 +28,11 @@ class RectangleCreator(ICreator):
 
 # 大圆形创建者
 class BigCircleCreator(CircleCreator):
-    def _set_radius(self):
+    def _set_radius(self, circle):
         print("Set Radius to 10")
+        return circle
     
     def get_shape(self):
-        self._set_radius()
-        return super().get_shape()
+        return self._set_radius(super().get_shape())
 
 

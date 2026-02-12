@@ -1,9 +1,10 @@
-#ifndef PRODUCT_H
-#define PRODUCT_H
+#pragma once
 
 // 产品类型枚举
+#define SHAPE_KIND_COUNT  1+4
+
 typedef enum ShapeKind {
-    NONE,
+    UNKNOWN_SHAPE = 0,
     CIRCLE,
     SQUARE,
     RECTANGLE,
@@ -12,31 +13,17 @@ typedef enum ShapeKind {
 
 // 产品接口结构体
 typedef struct IShape {
+    void *data;
     void (*draw)(struct IShape* self);
     void (*fill)(struct IShape* self);
+    void (*destroy)(struct IShape* self);
 } IShape;
+typedef  struct IShape  IShape;
 
 // 具体产品结构体
-typedef struct Circle {
-    IShape base;
-} Circle;
+typedef struct CircleData {} CircleData;
+typedef struct SquareData {} SquareData;
+typedef struct RectangleData {} RectangleData;
+typedef struct UnknownShapeData {} UnknownShapeData;
 
-typedef struct Square {
-    IShape base;
-} Square;
-
-typedef struct Rectangle {
-    IShape base;
-} Rectangle;
-
-typedef struct UnknownShape {
-    IShape base;
-} UnknownShape;
-
-// 构造函数
-Circle* createCircle();
-Square* createSquare();
-Rectangle* createRectangle();
-UnknownShape* createUnknownShape();
-
-#endif // PRODUCT_H
+IShape* createShape(ShapeKind kind);

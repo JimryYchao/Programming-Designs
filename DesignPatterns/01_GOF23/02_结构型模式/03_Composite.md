@@ -27,7 +27,7 @@
   <a href="../DP_examples/Lua/02_Structural/Composite/client.lua"><img src="https://img.shields.io/badge/Lua-00599C?for-the-badge&logoColor=white"></a>
   <a href="../DP_examples/Go/02_Structural/Composite/client_test.go"><img src="https://img.shields.io/badge/Go-00599C?for-the-badge&logoColor=white"></a>
   <a href="../DP_examples/Python/02_Structural/Composite/client.py"><img src="https://img.shields.io/badge/Python-00599C?for-the-badge&logoColor=white"></a>
-  <!-- <a href="../DP_examples/Rust/02_Structural/Composite/main.rs"><img src="https://img.shields.io/badge/Rust-00599C?for-the-badge&logoColor=white"></a> -->
+  <a href="../DP_examples/Rust/02_Structural/Composite/main.rs"><img src="https://img.shields.io/badge/Rust-00599C?for-the-badge&logoColor=white"></a>
 </p>
 
 ---

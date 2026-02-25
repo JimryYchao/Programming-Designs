@@ -24,7 +24,7 @@
 
 <p align="left">
   <a href="../DP_examples/CSharp/03_Behavioral/Interpreter/Client.cs"><img src="https://img.shields.io/badge/C%23-00599C?for-the-badge&logoColor=white"></a>
-  <a href="../DP_examples/C/03_Behavioral/Interpreter/client.c"><img src="https://img.shields.io/badge/C-00599C?for-the-badge&logoColor=white"></a>
+  <a href="../DP_examples/C/03_Behavioral/Interpreter/Client.c"><img src="https://img.shields.io/badge/C-00599C?for-the-badge&logoColor=white"></a>
   <a href="../DP_examples/C++/03_Behavioral/Interpreter/Client.cpp"><img src="https://img.shields.io/badge/C++-00599C?for-the-badge&logoColor=white"></a>
   <a href="../DP_examples/Lua/03_Behavioral/Interpreter/Client.lua"><img src="https://img.shields.io/badge/Lua-00599C?for-the-badge&logoColor=white"></a>
   <a href="../DP_examples/Go/03_Behavioral/Interpreter/Client_test.go"><img src="https://img.shields.io/badge/Go-00599C?for-the-badge&logoColor=white"></a>

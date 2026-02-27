@@ -1,6 +1,5 @@
 from memento import Memento
 
-# 发起人类
 class Originator:
     def __init__(self, s1, s2, s3):
         self.state1 = s1
